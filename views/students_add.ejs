@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Register a new student</h1>
+    <%=Message%>
+    <form method="POST">
+        <input placeholder="First Name" name="fname" required>
+        <input placeholder="Last Name" name="lname" required>
+        <br>
+        <input placeholder="Roll Number" name="roll" required>
+        <br>
+        <input placeholder="Email" name="email" type="email" required>
+        <br>
+        <input placeholder="Password" name="password" type="password" required>
+        <br>
+        <input placeholder="Batch" name="batch" required>
+        <br>
+        <input placeholder="Phone Number" name="phone" required>
+        <br>
+        <select name="department" required>
+                <option value="">Select Department</option>
+                <%for (var i =0;i<Depts.length; i++) {%>
+                <option value="<%=Depts[i].name%>"><%=Depts[i].name%></option>
+                <%}%>
+        </select>
+        <br>
+        <select name="degreeType" required>
+            <option value="">Select Degree Type</option>
+            <option value="Bachelors">Bachelors</option>
+            <option value="Masters">Masters</option>
+            <option value="Doctorate">Doctorate</option>
+        </select>
+        <select name="degree" required>
+            <option value="">Select Degree Name</option>
+            <%for (var i =0;i<Degrees.length; i++) {%>
+            <option value="<%=Degrees[i].degreeName%>"><%=Degrees[i].degreeName%></option>
+            <%}%>
+        </select>
+        <br>
+        <input type="submit" value="Register Student">
+    </form>
+    <button onclick="window.location.replace('/adminHome')">Back to Admin Panel</button>
+</body>
+</html>

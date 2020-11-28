@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Institute</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <br><br>
+    <h1 class="text-center">Register your institute</h1>
+    <br>
+    <p><%=error_message%></p>
+    <div class="text-center">
+    <form id="register_form" method="POST">
+        <input id="ins" name="institute_name" placeholder="Institute Name" required>
+        <br><br>
+        <input id="email" name="email" placeholder="Email" type="email" required>
+        <br><br>
+        <input id="pass" name="password" placeholder="Password" type="password" required>
+        <br><br>
+        <input placeholder="Confirm Password" type="password" required>
+        <br><br>
+        <button class="btn-primary" id="registerBtn" type="submit">Register</button>
+    </form>
+</div>
+</body>
+
+</html>

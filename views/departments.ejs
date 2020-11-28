@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Departments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <%=Message%>
+    <form method="POST">
+        <input name="dept_name" placeholder="Enter department name" required>
+        <input type="submit" value="Add Department">
+    </form>
+    <h1>Departments</h1>
+    <ul>
+        <%
+        for (var i = 0; i < data.length; i++)
+        {%>
+            <li><%=data[i].name%><button onclick="window.location.replace('/departments/delete/<%=data[i]._id%>')">Delete</button></li>
+        <%}%>
+    </ul>    
+    </body>
+    <script>
+
+    </script>
+</html>

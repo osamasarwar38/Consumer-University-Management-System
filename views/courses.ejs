@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <button id="coursebtn">Add a new course</button>
+    <h1>Courses</h1>
+    <ul>
+        <%
+        for (var i = 0; i < data.length; i++)
+        {%>
+            <li><%=data[i].course_code%> - <%=data[i].title%> - <%=data[i].credit_hrs%> Hrs <button onclick="window.location.replace('/courses/delete/<%=data[i]._id%>')">Delete</button></li>
+        <%}%>
+    </ul>    
+    </body>
+    <script>
+        document.getElementById('coursebtn').addEventListener('click', function(){
+            window.location.href = '/courses/add'
+        })
+    </script>
+</html>

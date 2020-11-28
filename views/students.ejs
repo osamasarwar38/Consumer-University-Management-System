@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <button id="btn">Add a new student</button>
+    <h1>Students</h1>
+    <ul>
+        <%
+        for (var i = 0; i < data.length; i++)
+        {%>
+            <li><%=data[i].roll%> - <%=data[i].fname%> <%=data[i].lname%><button onclick="window.location.replace('/students/<%=data[i]._id%>')">View Details</button></li>
+        <%}%>
+    </ul>    
+    </body>
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            window.location.href = '/students/add'
+        })
+    </script>
+</html>

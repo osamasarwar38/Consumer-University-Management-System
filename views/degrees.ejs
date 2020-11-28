@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Degrees</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <button id="degreebtn">Add a new degree</button>
+    <h1>Degrees</h1>
+    <ul>
+        <%
+        for (var i = 0; i < data.length; i++)
+        {%>
+            <li><%=data[i].degreeType%> in <%=data[i].degreeName%><button onclick="window.location.replace('/degrees/delete/<%=data[i]._id%>')">Delete</button></li>
+        <%}%>
+    </ul>    
+    </body>
+    <script>
+        document.getElementById('degreebtn').addEventListener('click', function(){
+            window.location.href = '/degrees/add'
+        })
+    </script>
+</html>

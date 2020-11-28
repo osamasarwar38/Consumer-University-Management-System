@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <br>
+    <h2 class="text-center">Welcome to the Admin Panel of <%=name%></h2>
+    <br>
+    <div class="text-center">
+    <button class="btn-lg btn-primary" id="departments">Departments</button>
+    <br><br>
+    <button class="btn-lg btn-primary" id="degrees">Degrees</button>
+    <br><br>
+    <button class="btn-lg btn-primary" id="courses">Courses</button>
+    <br><br>
+    <button class="btn-lg btn-primary" id="students">Students</button>
+    <br><br>
+    <button class="btn-lg btn-primary" id="instructors">Instructors</button>
+    <br><br>
+    <button class="btn-lg btn-primary" id="logout">Logout</button>
+</div>
+</body>
+<script> 
+    document.getElementById('logout').addEventListener('click', function()
+    {
+        deleteAllCookies()
+        window.location.replace('http://localhost:4444/')
+    })
+
+    document.getElementById('departments').addEventListener('click', function()
+    {
+        window.location.href = 'http://localhost:4444/departments'
+    })
+
+    document.getElementById('degrees').addEventListener('click', function()
+    {
+        window.location.href = 'http://localhost:4444/degrees'
+    })
+
+    document.getElementById('courses').addEventListener('click', function()
+    {
+        window.location.href = 'http://localhost:4444/courses'
+    })
+
+    document.getElementById('students').addEventListener('click', function()
+    {
+        window.location.href = 'http://localhost:4444/students'
+    })
+    
+    document.getElementById('instructors').addEventListener('click', function()
+    {
+        window.location.href = 'http://localhost:4444/instructors'
+    })
+
+    function deleteAllCookies() {
+        var cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+</script>
+
+</html>
